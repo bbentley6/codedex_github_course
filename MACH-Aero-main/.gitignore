@@ -1,0 +1,10 @@
+_build
+.DS_Store
+*.cgns
+.vscode/*
+make.bat
+my_tutorial/
+*.pyc
+tutorial/intersection/INPUT/
+tutorial/intersection/meshing/surface/
+output/

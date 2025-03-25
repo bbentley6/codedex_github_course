@@ -1,0 +1,26 @@
+trigger: none
+pr:
+  - main
+
+# add a daily cron job
+# set to 5am EST, which is 10am UTC
+schedules:
+  - cron: "0 10 * * *"
+    displayName: Nightly test
+    branches:
+      include:
+        - main
+    always: true
+
+resources:
+  repositories:
+    - repository: azure_template
+      type: github
+      name: mdolab/.github
+      endpoint: mdolab
+
+extends:
+  template: azure/azure_template.yaml@azure_template
+  parameters:
+    REPO_NAME: MACH-Aero
+    IMAGE: auto
